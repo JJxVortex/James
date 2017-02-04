@@ -2,6 +2,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -14,6 +15,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+import static javax.swing.text.StyleConstants.Background;
+
 //http://stackoverflow.com/questions/11005751/is-there-a-util-to-convert-us-state-name-to-state-code-eg-arizona-to-az/11006236#11006236
 //USA - (State)
 // England
@@ -23,6 +26,7 @@ import java.util.TimeZone;
  * Created by Sean on 17/12/2016.
  */
 // GUI was made by Sean and was beautified by James
+    //Fixed GUI was having problem running and finding some parts of the QUI. - James
 public class Frontend {
     private JList list1;
     private JList list2;
@@ -34,16 +38,21 @@ public class Frontend {
     private JPanel Container5;
     private JPanel Container6;
     private JPanel Container7;
+    private JPanel Container8;
     private JLabel Currency;
     private JLabel currency1;
     private JLabel ConversionRate;
     private JLabel Time;
-    private JLabel Time2;
-    private JLabel TImeZone;
-    private JLabel TImeZone1;
+    private JLabel Time1;
+    private JLabel TimeDifferences;
+    //private JLabel TImeZone;
+   // private JLabel TImeZone1;
+    private JLabel DigitalClock;
+    private JLabel DigitalClock1;
     private JButton button1;
     private JTextField textField1;
     private JButton button2;
+    private JButton changeColour;
 
     public Frontend() {
         button1.addActionListener(new ActionListener() {
@@ -215,6 +224,35 @@ public class Frontend {
 
             }
         });
+
+        //Button changes the colours from White on Black. To Black on White - James
+        changeColour.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    Container.setBackground(Color.black);
+                    Container1.setBackground(Color.white);
+                    Container2.setBackground(Color.white);
+                    Container3.setBackground(Color.white);
+                    Container4.setBackground(Color.white);
+                    Container5.setBackground(Color.white);
+                    Container6.setBackground(Color.white);
+                    Container7.setBackground(Color.white);
+                    Container8.setBackground(Color.white);
+                    textField1.setBackground(Color.white);
+                    list1.setBackground(Color.white);
+                    list2.setBackground(Color.white);
+                    list1.setForeground(Color.black);
+                    list2.setForeground(Color.black);
+                    currency1.setForeground(Color.black);
+                    ConversionRate.setForeground(Color.black);
+                    DigitalClock.setForeground(Color.black);
+                    Time.setForeground(Color.black);
+                    DigitalClock1.setForeground(Color.black);
+                    Time1.setForeground(Color.black);
+                    TimeDifferences.setForeground(Color.black);
+                    textField1.setForeground(Color.black);
+                }
+        });
     }
 
     public static void main(String[] args) {
@@ -246,7 +284,7 @@ public class Frontend {
             String TimeOutput2 = formatter1.format(calendar.getTime());
 
             Time.setText(TimeOutput2);
-            Time2.setText(TimeOutput1);
+            Time1.setText(TimeOutput1);
 
 
 
